@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://bootswatch.com/cyborg/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Nova+Flat" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="{{url_for('static', filename='death-star.ico')}}">
+        <title>Welcome to the Star Wars Universe!</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 align="center"><img src="{{url_for('static', filename='sw.png')}}" alt="Star Wars" style="width:;height:height;"> Universe Planets</h1>
+            <p>
+                <button type="button" class="btn btn-default" id="previous">Previous</button>
+                <button type="button" class="btn btn-default" id="next">Next</button>
+            </p>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Diameter</th>
+                        <th>Climate</th>
+                        <th>Gravity</th>
+                        <th>Terrain</th>
+                        <th>Water</th>
+                        <th>Population</th>
+                        <th>Residents</th>
+                    </tr>
+                </thead>
+                <tbody id="planet_table">
+                </tbody>
+            </table>
+        </div>
+        <div class="modal fade" id="residentModal" tabindex="-1" role="dialog" aria-labelledby="residentModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="residentModalLabel">New message</h4>
+              </div>
+              <div class="modal-body">
+                  <table class="table table-bordered table-hover">
+                      <thead>
+                          <tr>
+                              <th>Name</th>
+                              <th>Height</th>
+                              <th>Mass</th>
+                              <th>Hair color</th>
+                              <th>Skin color</th>
+                              <th>Eye color</th>
+                              <th>Birth year</th>
+                              <th>Gender</th>
+                          </tr>
+                      </thead>
+                      <tbody id="resident_table">
+                      </tbody>
+                  </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+    </body>
+</html>
